@@ -244,6 +244,31 @@ details.notes .md h4 { color: var(--text); margin: 12px 0 6px; font-size: 16px; 
 details.notes .md ul { margin: 0; padding-left: 20px; }
 .fresh { font-size: 14px; color: var(--faint); margin-top: 18px; }
 
+/* ---------- Community / Discord ---------- */
+.nav-dc { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; }
+.nav-dc svg { color: #8EA1FF; }
+.community { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(26px, 4vw, 52px); border-radius: 28px;
+  background: radial-gradient(120% 140% at 0% 0%, rgba(88,101,242,.32), transparent 55%), linear-gradient(160deg, rgba(36,26,64,.85), rgba(14,11,26,.9)); border: 1px solid rgba(142,161,255,.3); box-shadow: 0 40px 120px rgba(0,0,0,.45); }
+.community h2 { font-family: var(--display); font-weight: 900; font-size: clamp(30px, 3.8vw, 52px); line-height: 1.04; margin: 22px 0 14px; }
+.community p { color: var(--dim); margin: 0 0 28px; max-width: 34em; }
+.cm-server { display: flex; align-items: center; gap: 14px; }
+.cm-server b { display: block; font-size: 18px; }
+.cm-icon { width: 56px; height: 56px; border-radius: 18px; overflow: hidden; background: #1E1A3A; display: grid; place-items: center; flex: none; box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+.cm-icon img { width: 100%; height: 100%; object-fit: cover; }
+.cm-live { display: flex; align-items: center; gap: 8px; color: var(--dim); font-size: 15px; }
+.on-dot { width: 9px; height: 9px; border-radius: 50%; background: #3BA55C; box-shadow: 0 0 8px #3BA55C; }
+.cm-team h3 { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--dim); margin: 0 0 14px; }
+.dev { display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; margin-bottom: 10px; border-radius: 16px; background: rgba(11,9,24,.5); border: 1px solid var(--line); cursor: pointer; text-align: left; transition: border-color .2s, background .2s; }
+.dev:hover { border-color: rgba(142,161,255,.55); background: rgba(88,101,242,.12); }
+.dev .av { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 20px; color: #fff; background: linear-gradient(135deg, var(--violet), var(--blue)); flex: none; }
+.dev .av2 { background: linear-gradient(135deg, var(--blue), var(--cyan)); }
+.dev b { display: block; font-family: var(--ui); font-size: 17px; }
+.dev small { color: var(--faint); font-size: 14px; }
+.dev .cp { margin-left: auto; color: var(--faint); }
+.dev .cp svg { width: 18px; height: 18px; }
+.cm-hint { color: var(--faint); font-size: 14px; margin: 8px 0 0; }
+.faq details p a { color: var(--lilac); }
+
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: 10px; max-width: 880px; }
 .faq details { border-radius: 16px; background: rgba(25,20,51,.55); border: 1px solid var(--line); padding: 0 22px; }
@@ -284,6 +309,7 @@ dialog.trailer .close { position: absolute; right: -6px; top: -48px; background:
   .callout { position: static; max-width: none; margin-top: 10px; }
   .shot-wrap .mark { display: none; }
   .cos { grid-template-columns: 1fr; }
+  .community { grid-template-columns: 1fr; }
   .finder { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -304,3 +330,4 @@ dialog.trailer .close { position: absolute; right: -6px; top: -48px; background:
 }
 @media (max-width: 700px) { .game.open .sim { display: none; } }
 @media (max-width: 560px) { .music-stage .songcard { right: 8px; } }
+.cm-live[hidden] { display: none; }

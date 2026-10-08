@@ -181,6 +181,28 @@
       }).catch(() => {});
   }).catch(() => { $('#fresh').textContent = ''; });
 
+  // ---------------------------------------------------------------- Discord
+  let dcInfo = null;
+  const dcZeigen = () => {
+    if (!dcInfo) return;
+    const fmtN = (n) => Number(n).toLocaleString(window.VX.lang() === 'de' ? 'de-AT' : 'en-GB');
+    $('#dcCounts').textContent = t('dc.counts', fmtN(dcInfo.online), fmtN(dcInfo.members));
+    $('#dcLive').hidden = false;
+  };
+  // Oeffentliche Einladungs-Info von Discord (Name, Icon, Mitglieder); faellt sie aus, bleibt der Rest stehen
+  fetch('https://discord.com/api/v10/invites/mrSa2Fu3yS?with_counts=true')
+    .then((r) => (r.ok ? r.json() : null)).then((d) => {
+      if (!d || !d.guild) return;
+      dcInfo = { online: d.approximate_presence_count || 0, members: d.approximate_member_count || 0 };
+      if (d.guild.name) $('#dcName').textContent = d.guild.name;
+      if (d.guild.icon) $('#dcIcon').innerHTML = `<img src="https://cdn.discordapp.com/icons/${encodeURIComponent(d.guild.id)}/${encodeURIComponent(d.guild.icon)}.png?size=128" alt="" width="64" height="64">`;
+      dcZeigen();
+    }).catch(() => {});
+  document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); } catch (_) { /* egal */ }
+    const el = $('#toast'); el.textContent = t('dc.copied', b.dataset.copy); el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2600);
+  }));
+
   // ---------------------------------------------------------------- Trailer
   const dlg = $('#trailer'), vid = $('#trailerVideo');
   $('#trailerBtn').addEventListener('click', () => { dlg.showModal(); vid.play().catch(() => {}); });
@@ -190,6 +212,6 @@
   dlg.addEventListener('close', () => vid.pause());
 
   // ---------------------------------------------------------------- Sprache
-  document.addEventListener('vx-lang', () => { liste(); botsUndPvp(); downloadsAnzeigen(); });
+  document.addEventListener('vx-lang', () => { liste(); botsUndPvp(); downloadsAnzeigen(); dcZeigen(); });
   window.VX.applyLang();
 })();
