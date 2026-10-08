@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vortex Client – Minecraft client and launcher</title>
+<meta name="description" content="Vortex is a free Minecraft client with 143 modules, 66 cheats and 5 bots, plus its own launcher for every version from 1.8.9 to 26.2.">
+<meta name="theme-color" content="#0B0918">
+<meta property="og:title" content="Vortex Client">
+<meta property="og:description" content="Free Minecraft client: 143 modules, 66 cheats, 5 bots and a launcher that keeps it all up to date.">
+<meta property="og:image" content="assets/img/trailer-poster.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/unbounded-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/preview.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></symbol>
+    <symbol id="i-hud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M6.5 8h4M6.5 11h2.5"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M20 17h0"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="17" r="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 4.7a3.5 3.5 0 0 1 0 6.6M18.5 14.8c1.7.8 2.7 2.5 3 5.2"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h0M15 13h0M2 13v2M22 13v2"/><circle cx="12" cy="3.5" r="1"/></symbol>
+    <symbol id="i-keys" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><path d="M6.5 10h0M10 10h0M14 10h0M17.5 10h0M8 14h8"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.6 5.7 3.6 9s-1.1 6.3-3.6 9c-2.5-2.7-3.6-5.7-3.6-9S9.5 5.7 12 3z"/></symbol>
+    <symbol id="i-restart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 21h16"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5z"/></symbol>
+    <symbol id="i-win" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.3 10.4 4v7.3H3zM11.4 3.9 21 2.5v8.8h-9.6zM3 12.6h7.4V20L3 18.7zM11.4 12.6H21v8.9l-9.6-1.4z"/></symbol>
+    <symbol id="i-cape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12l-1 4 2 14-7-3-7 3 2-14z"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 18h18M4 18 3 8l5 4 4-7 4 7 5-4-1 10"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></symbol>
+  </defs>
+</svg>
+
+<div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/img/logo.png" alt="" width="36" height="36">Vortex <small>Client</small></a>
+    <ul id="navlinks">
+      <li><a href="#launcher" data-i18n="nav.launcher">Launcher</a></li>
+      <li><a href="#cheats" data-i18n="nav.cheats">Cheats</a></li>
+      <li><a href="#bots" data-i18n="nav.bots">Bots</a></li>
+      <li><a href="#pvp" data-i18n="nav.pvp">PvP &amp; HUD</a></li>
+      <li><a href="#download" data-i18n="nav.download">Download</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+    <a class="btn btn-main btn-small" href="#download" data-i18n="nav.get">Get Vortex</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span data-i18n="hero.press">Press</span><br><span class="key" id="heroKey" role="button" tabindex="0" aria-controls="game"><span>Right Shift</span></span></h1>
+      <p class="lead" data-i18n-html="hero.lead">That one key opens everything in <b>Vortex</b>: 143 modules, 66 cheats, 5 bots, your HUD and your music. Free, for every Minecraft version from 1.8.9 to 26.2.</p>
+      <div class="cta">
+        <a class="btn btn-main" id="heroDownload" href="#download"><svg><use href="#i-win"/></svg><span><span data-i18n="hero.dl">Download the launcher</span><span class="sub" id="heroDlSub">Windows 10 / 11</span></span></a>
+        <button class="btn btn-ghost" type="button" id="trailerBtn"><svg><use href="#i-play"/></svg><span data-i18n="hero.trailer">Watch the trailer</span></button>
+      </div>
+      <div class="facts">
+        <span id="factVersion">Vortex 4.27</span>
+        <span data-i18n="hero.f2">Minecraft 1.8.9 – 26.2</span>
+        <span data-i18n="hero.f3">Free</span>
+      </div>
+    </div>
+
+    <div class="game" id="game" aria-label="Interactive preview of the Vortex menu">
+      <div class="world"></div>
+      <div class="vx-hud" id="vxHud"></div>
+      <div class="hotbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="hint" data-i18n-html="hero.hint">Press <kbd>Right Shift</kbd> or click to open the menu</div>
+      <span class="sim" data-i18n="hero.sim">Preview in your browser</span>
+      <div class="vx" id="vx"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAUNCHER ================= -->
+<section class="block" id="launcher">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-i18n="l.h">One launcher for every version</h2>
+      <p data-i18n="l.p">Sign in with Microsoft, pick a Minecraft version and press Play. The launcher installs Fabric, Vortex and the Plus Addon for you and keeps them updated.</p>
+    </div>
+    <div class="split">
+      <div class="shot-wrap reveal" style="position:relative">
+        <div class="shot"><img src="assets/img/launcher-home.webp" alt="Vortex Launcher home page with version picker and Play button" width="2000" height="1250" loading="lazy"></div>
+        <div class="mark" style="left:19%;top:32.8%;width:48.6%;height:6.4%" aria-hidden="true"></div>
+        <div class="callout" style="right:-18px;top:44%"><div><b data-i18n="l.c1t">Always the newest Vortex</b><span data-i18n="l.c1">Updates arrive on their own – no jar files to copy.</span></div></div>
+      </div>
+      <ul class="points reveal">
+        <li><b data-i18n="l.p1t">Every version, one click</b><span data-i18n="l.p1">26.2, 26.1.2, 26.1.1, 1.21.11 and 1.8.9 – each with its own folder for mods, worlds and settings.</span></li>
+        <li><b data-i18n="l.p2t">Mod profiles</b><span data-i18n="l.p2">Keep a PvP setup and a survival setup side by side and switch between them.</span></li>
+        <li><b data-i18n="l.p3t">Mods, shaders, servers, hosting</b><span data-i18n="l.p3">Find mods on Modrinth, install Iris for shaders, join servers and host your world for friends.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHEATS ================= -->
+<section class="block" id="cheats">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-i18n="c.h">66 cheats, a click away</h2>
+      <p data-i18n="c.p">The Plus Addon puts every cheat into the same menu as the rest of Vortex. Each one tells you how risky it is on a server.</p>
+    </div>
+  </div>
+  <div class="wall reveal" id="wall" aria-hidden="true">
+    <div class="rows" id="wallRows"></div>
+    <div class="count"><div><strong class="grad" id="wallNum">66</strong><span data-i18n="c.cheats">CHEATS</span></div></div>
+  </div>
+  <div class="wrap">
+    <div class="finder">
+      <label class="search"><svg><use href="#i-search"/></svg><span class="sr" data-i18n="c.searchLabel">Search cheats</span><input id="cheatSearch" type="search" placeholder="Search 66 cheats – try “aura” or “elytra”" data-i18n-ph="c.search" autocomplete="off"></label>
+      <div class="filters" id="riskFilter" role="group" aria-label="Ban risk">
+        <button type="button" data-risk="all" aria-pressed="true" data-i18n="c.all">All</button>
+        <button type="button" data-risk="low" aria-pressed="false"><span class="dot risk-low"></span><span data-i18n="c.low">Low</span></button>
+        <button type="button" data-risk="medium" aria-pressed="false"><span class="dot risk-medium"></span><span data-i18n="c.medium">Medium</span></button>
+        <button type="button" data-risk="high" aria-pressed="false"><span class="dot risk-high"></span><span data-i18n="c.high">High</span></button>
+        <button type="button" data-risk="extreme" aria-pressed="false"><span class="dot risk-extreme"></span><span data-i18n="c.extreme">Extreme</span></button>
+      </div>
+    </div>
+    <div class="list" id="cheatList" aria-live="polite"></div>
+    <div class="list-foot"><span id="cheatCount"></span><button class="more" type="button" id="cheatMore" data-i18n="c.more">Show all</button></div>
+    <p class="note" data-i18n-html="c.note"><b>Cheats can get you banned.</b> Only use them where the server allows it. One switch – “Clean Modules” in the settings – turns every cheat and bot off and hides them, for example before a screenshare.</p>
+  </div>
+</section>
+
+<!-- ================= BOTS ================= -->
+<section class="block" id="bots">
+  <div class="wrap">
+    <div class="split flip">
+      <div class="reveal">
+        <div class="head" style="margin-bottom:0">
+          <h2 data-i18n="b.h">Bots that keep playing</h2>
+          <p data-i18n="b.p">Start a bot, put the controller down. The Netherite Farmer tunnels at Y 15, mines every Ancient Debris it finds, eats, keeps a totem in your off-hand and avoids lava.</p>
+        </div>
+      </div>
+      <div class="reveal" style="position:relative">
+        <div class="shot"><video id="nfVideo" src="assets/video/netherite-2x.mp4" poster="assets/img/netherite-poster.webp" muted loop playsinline preload="none" width="1280" height="720" aria-label="Netherite Farmer mining Ancient Debris in the Nether"></video></div>
+        <span class="speed" data-i18n="b.speed">2× speed · recorded in game</span>
+      </div>
+    </div>
+    <div class="bots" id="botList"></div>
+  </div>
+</section>
+
+<!-- ================= PVP & HUD ================= -->
+<section class="block" id="pvp">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-i18n="p.h">A HUD you arrange yourself</h2>
+      <p data-i18n="p.p">28 HUD elements and 15 PvP tools. Drag keystrokes, armour, effects, coordinates and the rest wherever you want them in the HUD editor.</p>
+    </div>
+    <div class="shot-wrap reveal" style="position:relative">
+      <div class="shot"><img src="assets/img/hud-ingame.webp" alt="Vortex HUD in game: keystrokes, armour, potion effects, compass and music card" width="1920" height="1080" loading="lazy"></div>
+      <div class="mark" style="left:0.6%;top:32.4%;width:10.4%;height:25%" aria-hidden="true"></div>
+      <div class="mark" style="left:91.2%;top:38.9%;width:8.4%;height:27.8%" aria-hidden="true"></div>
+      <div class="callout" style="left:13%;top:36%"><div><b data-i18n="p.c1t">Keystrokes &amp; CPS</b><span data-i18n="p.c1">See every key and click you press.</span></div></div>
+      <div class="callout" style="right:11%;top:56%"><div><b data-i18n="p.c2t">Armour at a glance</b><span data-i18n="p.c2">Durability in percent, effects with timers.</span></div></div>
+    </div>
+    <div class="chips" id="pvpChips"></div>
+  </div>
+</section>
+
+<!-- ================= MUSIC ================= -->
+<section class="block" id="music">
+  <div class="wrap split">
+    <div class="music-stage reveal">
+      <div class="shot"><img src="assets/img/songcard.webp" alt="Song card above a player's head in game" width="1920" height="1080" loading="lazy"></div>
+      <div class="notes" aria-hidden="true"><span style="left:18%;top:60%;animation-delay:0s">♪</span><span style="left:70%;top:55%;animation-delay:1.6s">♫</span><span style="left:45%;top:70%;animation-delay:3.1s">♪</span></div>
+      <div class="songcard" aria-label="Now Playing card in the HUD">
+        <div class="cover"></div>
+        <div class="meta">
+          <div class="t">Into the Night</div>
+          <div class="a">Kontraa</div>
+          <div class="bar"><i id="songBar"></i></div>
+          <div class="times"><span id="songNow">0:46</span><span>2:20</span></div>
+          <div class="badge">♫ Spotify</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="head" style="margin-bottom:0">
+        <h2 data-i18n="m.h">Your song, above your head</h2>
+        <p data-i18n="m.p">Connect Spotify and Vortex shows cover, title and progress in your HUD. Other Vortex players see what you are listening to – and can listen along with one click.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COSMETICS (nur Hinweis) ================= -->
+<section class="wrap reveal" style="padding-bottom:clamp(60px,8vw,110px)">
+  <div class="cos">
+    <div class="icons" aria-hidden="true"><span style="color:var(--lilac)"><svg><use href="#i-cape"/></svg></span><span style="color:#FFD27A"><svg><use href="#i-crown"/></svg></span><span style="color:var(--cyan)"><svg><use href="#i-spark"/></svg></span></div>
+    <div><h2 data-i18n="k.h">Animated capes, 3D hats and emotes</h2><p data-i18n="k.p">We are keeping them a surprise. Open the Wardrobe in game to try them on.</p></div>
+    <a class="btn btn-ghost" href="#download" data-i18n="k.cta">Try them in game</a>
+  </div>
+</section>
+
+<!-- ================= DOWNLOAD ================= -->
+<section class="block" id="download">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-i18n="d.h">Download</h2>
+      <p data-i18n="d.p">The launcher is the easiest way: it sets everything up and keeps it updated. Prefer your own setup? Grab the mod files for your version.</p>
+    </div>
+    <div class="dl">
+      <div class="card launcher-card reveal">
+        <h3 data-i18n="d.lt">Vortex Launcher</h3>
+        <p class="muted" data-i18n="d.ld">Windows 10 and 11. Includes the client, the Plus Addon and Fabric.</p>
+        <a class="btn btn-main big" id="dlSetup" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest"><svg><use href="#i-down"/></svg><span><span data-i18n="d.setup">Download installer</span><span class="sub" id="dlSetupSub">.exe</span></span></a>
+        <div class="alt"><a id="dlPortable" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest" data-i18n="d.portable">Portable version (no install)</a><a id="dlRelease" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest" data-i18n="d.release">Release on GitHub</a></div>
+        <ul class="points mini">
+          <li data-i18n="d.b1">Sets up Fabric, Vortex and the Plus Addon in one go</li>
+          <li data-i18n="d.b2">Updates itself and every mod it installed</li>
+          <li data-i18n="d.b3">Microsoft sign-in, skins, worlds, servers and hosting</li>
+        </ul>
+        <div class="meta-row" id="launcherMeta"></div>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="d.mt">Mod files</h3>
+        <p class="muted" data-i18n="d.md">For your own Fabric installation. Pick your Minecraft version:</p>
+        <div class="tabs" role="tablist" id="mcTabs"></div>
+        <div id="mcFiles"></div>
+      </div>
+    </div>
+    <p class="fresh" id="fresh"></p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="head reveal"><h2 data-i18n="f.h">Questions</h2></div>
+    <div class="faq reveal">
+      <details><summary data-i18n="f.q1">Is Vortex free?</summary><p data-i18n="f.a1">Yes. The client, the Plus Addon and the launcher are free.</p></details>
+      <details><summary data-i18n="f.q2">Which Minecraft versions are supported?</summary><p data-i18n="f.a2">26.2, 26.1.2, 26.1.1 and 1.21.11 with Fabric, and 1.8.9 with Legacy Fabric. The Plus Addon (cheats and bots) is available for every version except 1.8.9.</p></details>
+      <details><summary data-i18n="f.q3">Can I get banned?</summary><p data-i18n="f.a3">For cheats: yes, on most servers. Every cheat shows its ban risk. The normal client features – HUD, PvP tools, performance, music – are made for regular play.</p></details>
+      <details><summary data-i18n="f.q4">Windows says the installer is unknown. Is that safe?</summary><p data-i18n="f.a4">Windows SmartScreen warns about every new program that is not signed with a paid certificate. Download only from this page or from our GitHub releases; you can check each mod file with its SHA-256 shown above.</p></details>
+      <details><summary data-i18n="f.q5">Does it work on Mac or Linux?</summary><p data-i18n="f.a5">The launcher is for Windows. On Mac and Linux, install Fabric yourself and add the mod files from the download section.</p></details>
+      <details><summary data-i18n="f.q6">Does it work with Sodium and Iris?</summary><p data-i18n="f.a6">Yes. The launcher can install Iris and Sodium for shaders. If a Vortex module misbehaves with Sodium, turn both off again in the launcher.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top"><img src="assets/img/logo.png" alt="" width="30" height="30">Vortex <small>Client</small></a>
+      <p data-i18n="foot.legal">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+    </div>
+    <nav>
+      <a href="https://github.com/Marcinator31/Vortex-Launcher/releases" rel="noopener">GitHub</a>
+      <a href="#download" data-i18n="nav.download">Download</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="trailer" id="trailer">
+  <button class="close" type="button" id="trailerClose" data-i18n="t.close">Close</button>
+  <video id="trailerVideo" controls playsinline preload="none" poster="assets/img/trailer-poster.webp" src="assets/video/trailer.mp4"></video>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/js/modules.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/preview.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

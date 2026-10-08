@@ -1,0 +1,26 @@
+# Render Blueprint: Vortex-Website als Static Site (kostenlos, CDN, schlaeft nie ein).
+# Beim Bauen holt scripts/build-data.mjs die aktuellen Downloads (nur freigegebene
+# Versionen aus manifest.json, keine Betas) nach public/data/downloads.json.
+services:
+  - type: web
+    name: vortex-website
+    runtime: static
+    buildCommand: node scripts/build-data.mjs
+    staticPublishPath: ./public
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /data/*
+        name: Cache-Control
+        value: no-cache

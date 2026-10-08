@@ -1,0 +1,107 @@
+/* Nachbau des Right-Shift-Menues (HomeScreen) und der Mod-Liste im Browser.
+ * Masse in em: das Menue skaliert mit dem Spielfenster (Container-Breite). */
+
+.vx { position: absolute; inset: 0; z-index: 3; font-family: var(--ui); color: #fff; pointer-events: none; }
+.game.open .vx { pointer-events: auto; }
+.vx-panel { position: absolute; inset: 0; margin: auto; height: fit-content; max-height: 94%; font-size: clamp(8.5px, 1.32cqw, 15.5px); width: 74%; border-radius: 1.6em; background: rgba(16, 13, 30, 0.9); border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 2em 5em rgba(0,0,0,.55); padding: 1.7em 1.8em 1.3em; opacity: 0; transform: scale(.94) translateY(1.2em); transition: opacity .35s ease, transform .45s cubic-bezier(.2,1.1,.3,1); }
+.game.open .vx-panel.active { opacity: 1; transform: none; }
+.vx-panel:not(.active) { visibility: hidden; }
+.vx-head { display: flex; align-items: center; gap: .9em; margin-bottom: 1.3em; }
+.vx-head img { width: 3.4em; height: 3.4em; margin: -.4em -.2em; }
+.vx-head b { display: block; font-size: 1.55em; font-weight: 600; letter-spacing: -.01em; }
+.vx-head small { color: rgba(255,255,255,.62); font-size: 1.02em; }
+.vx-x { margin-left: auto; width: 2.6em; height: 2.6em; border-radius: 50%; border: 0; background: rgba(255,255,255,.07); color: #fff; cursor: pointer; display: grid; place-items: center; }
+.vx-x svg { width: 1.1em; height: 1.1em; }
+.vx-back { width: 2.6em; height: 2.6em; border-radius: 50%; border: 0; background: rgba(255,255,255,.07); color: #fff; cursor: pointer; display: grid; place-items: center; }
+.vx-back svg { width: 1.1em; height: 1.1em; }
+
+.vx-mods { display: flex; align-items: center; gap: 1.1em; width: 100%; padding: 1em 1.4em 1em 1em; border-radius: 1.2em; border: 1px solid rgba(140,150,255,.35); cursor: pointer; text-align: left;
+  background: linear-gradient(100deg, rgba(76,82,170,.75), rgba(56,58,130,.7)); color: #fff; font: inherit; transition: background .2s, transform .2s; }
+.vx-mods:hover { background: linear-gradient(100deg, rgba(90,96,195,.85), rgba(64,66,150,.8)); }
+.vx-mods .ic { width: 3.6em; height: 3.6em; border-radius: .9em; background: #5B8DEF; display: grid; place-items: center; flex: none; }
+.vx-mods .ic svg { width: 1.9em; height: 1.9em; }
+.vx-mods b { display: block; font-size: 1.45em; font-weight: 700; }
+.vx-mods small { color: rgba(255,255,255,.78); font-size: 1.02em; }
+.vx-mods .open { margin-left: auto; color: rgba(255,255,255,.82); display: flex; align-items: center; gap: .4em; }
+.vx-mods .open svg { width: 1em; height: 1em; }
+
+.vx-label { color: rgba(255,255,255,.5); font-size: .92em; letter-spacing: .08em; margin: 1.3em 0 .7em .2em; }
+.vx-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75em; }
+.vx-tool { display: flex; align-items: center; gap: .85em; padding: .95em; border-radius: 1em; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); cursor: pointer; color: #fff; font: inherit; text-align: left;
+  opacity: 0; transform: translateY(.8em); transition: background .2s, border-color .2s; }
+.vx-tool:hover { background: rgba(139,92,246,.14); border-color: rgba(139,92,246,.4); }
+.vx-tool .ic { width: 2.7em; height: 2.7em; border-radius: .75em; background: rgba(91,141,239,.16); display: grid; place-items: center; flex: none; color: #8FB4FF; }
+.vx-tool .ic svg { width: 1.45em; height: 1.45em; }
+.vx-tool b { display: block; font-weight: 600; font-size: 1.05em; }
+.vx-tool small { color: rgba(255,255,255,.55); font-size: .95em; white-space: nowrap; }
+.vx-tool.wide { grid-column: 1 / -1; }
+.game.open .vx-panel.active .vx-tool { animation: tile .5s cubic-bezier(.2,1,.3,1) forwards; animation-delay: calc(var(--i) * 45ms + 120ms); }
+@keyframes tile { to { opacity: 1; transform: none; } }
+
+.vx-foot { display: flex; align-items: center; gap: .6em; margin-top: 1.2em; padding-top: 1em; border-top: 1px solid rgba(255,255,255,.07); }
+.vx-foot span { color: rgba(255,255,255,.45); margin-right: auto; font-size: .95em; }
+.vx-foot button { display: flex; align-items: center; gap: .5em; border: 0; border-radius: 999px; padding: .55em 1em; background: rgba(255,255,255,.06); color: rgba(255,255,255,.88); font: inherit; cursor: pointer; }
+.vx-foot button svg { width: 1.15em; height: 1.15em; }
+.vx-foot button.red { background: rgba(239,68,68,.12); color: #FCA5A5; }
+
+/* --- Mod-Liste --- */
+.vx-panel.wide { width: 92%; height: 88%; display: flex; flex-direction: column; padding: 1.2em 1.3em 1em; }
+.vx-bar { display: flex; align-items: center; gap: .7em; margin-bottom: 1em; }
+.vx-bar h4 { margin: 0; font-size: 1.3em; font-weight: 700; }
+.vx-bar .count { color: rgba(255,255,255,.55); }
+.vx-find { margin-left: auto; display: flex; align-items: center; gap: .5em; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: .8em; padding: 0 .8em; width: 16em; }
+.vx-find svg { width: 1.05em; height: 1.05em; color: rgba(255,255,255,.5); flex: none; }
+.vx-find input { border: 0; outline: none; background: none; color: #fff; font: inherit; padding: .55em 0; width: 100%; min-width: 0; }
+.vx-cols { flex: 1; min-height: 0; display: flex; gap: .7em; overflow-x: auto; overflow-y: hidden; padding-bottom: .4em; scrollbar-width: thin; scrollbar-color: rgba(139,92,246,.6) transparent; }
+.vx-col { flex: 0 0 13.6em; display: flex; flex-direction: column; min-height: 0; border-radius: .9em; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); }
+.vx-col h5 { margin: 0; display: flex; justify-content: space-between; padding: .7em .85em .6em; font-size: 1.02em; font-weight: 700; border-bottom: 2px solid transparent; border-image: linear-gradient(90deg, #8B5CF6, #3B82F6) 1; }
+.vx-col h5 span { color: rgba(255,255,255,.5); font-weight: 500; }
+.vx-col ul { list-style: none; margin: 0; padding: .35em; overflow-y: auto; flex: 1; scrollbar-width: thin; scrollbar-color: rgba(139,92,246,.5) transparent; }
+.vx-row { border-radius: .6em; }
+.vx-row > button { width: 100%; display: flex; align-items: center; gap: .5em; padding: .5em .55em; border: 0; background: none; color: rgba(255,255,255,.78); font: inherit; cursor: pointer; text-align: left; border-radius: .6em; }
+.vx-row > button:hover { background: rgba(255,255,255,.05); }
+.vx-row.on > button { color: #fff; background: linear-gradient(90deg, rgba(139,92,246,.32), rgba(139,92,246,.06)); box-shadow: inset .2em 0 0 #8B5CF6; }
+.vx-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vx-row .sw { width: 2.3em; height: 1.3em; border-radius: .65em; }
+.vx-row .sw::after { width: .9em; height: .9em; left: .2em; top: .2em; }
+.vx-row.on .sw::after { transform: translateX(1em); }
+.vx-row .vx-plus { width: 1.4em; height: 1.4em; display: grid; place-items: center; color: rgba(255,255,255,.5); transition: transform .2s; }
+.vx-row.expanded .vx-plus { transform: rotate(45deg); }
+.vx-set { display: none; padding: .2em .7em .7em 1em; font-size: .92em; color: rgba(255,255,255,.62); }
+.vx-row.expanded .vx-set { display: block; }
+.vx-set p { margin: 0 0 .6em; line-height: 1.4; }
+.vx-s { display: flex; align-items: center; gap: .5em; padding: .3em 0; color: rgba(255,255,255,.82); }
+.vx-s label { flex: 1; }
+.vx-s output { min-width: 2.6em; text-align: right; font-variant-numeric: tabular-nums; }
+.vx-s input[type=range] { width: 5.4em; accent-color: #8B5CF6; }
+.vx-s .val { color: #A78BFA; }
+.vx-empty { color: rgba(255,255,255,.5); padding: 1em; font-size: .95em; }
+
+/* --- Bots --- */
+.vx-bots { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8em; overflow-y: auto; flex: 1; min-height: 0; padding-right: .2em; scrollbar-width: thin; scrollbar-color: rgba(139,92,246,.5) transparent; }
+.vx-botc { border-radius: 1em; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.07); padding: .9em 1em; }
+.vx-botc header { display: flex; align-items: center; gap: .6em; margin-bottom: .4em; }
+.vx-botc b { font-size: 1.15em; font-weight: 700; }
+.vx-botc header button { margin-left: auto; border: 0; border-radius: .6em; padding: .45em .9em; font: inherit; font-weight: 700; font-size: .9em; letter-spacing: .04em; color: #fff; background: #4C52AA; cursor: pointer; }
+.vx-botc.run header button { background: #B91C1C; }
+.vx-botc p { margin: 0 0 .5em; color: rgba(255,255,255,.6); font-size: .92em; line-height: 1.4; }
+.vx-botc .st { font-size: .92em; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: .45em; }
+.vx-botc .st::before { content: ''; width: .55em; height: .55em; border-radius: 2px; background: rgba(255,255,255,.35); }
+.vx-botc.run .st::before { background: #4ADE80; box-shadow: 0 0 .5em #4ADE80; }
+.vx-botc.run { border-color: rgba(74,222,128,.35); }
+
+/* Bot-Status-Zeile im Spiel (oben links), solange ein Bot laeuft */
+.vx-hud { position: absolute; left: 2.6%; top: 5%; z-index: 4; font-family: var(--ui); font-size: clamp(8px, 1.15cqw, 13px); color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,.6); display: grid; gap: .25em; pointer-events: none; }
+.vx-hud div { padding: .25em .55em; background: rgba(0,0,0,.35); border-radius: .3em; }
+.vx-hud b { color: #C4B5FD; font-weight: 600; }
+
+@container (max-width: 560px) {
+  .vx-panel { width: 92%; }
+  .vx-tools { grid-template-columns: repeat(2, 1fr); }
+  .vx-tool small { display: none; }
+  .vx-foot span { display: none; }
+  .vx-panel.wide { width: 96%; height: 94%; }
+  .vx-find { width: 10em; }
+  .vx-bots { grid-template-columns: 1fr; }
+}

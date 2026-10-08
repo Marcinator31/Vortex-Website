@@ -1,0 +1,127 @@
+{
+ "generatedAt": "2026-10-08T21:21:27.546Z",
+ "launcher": {
+  "version": "2.5.33",
+  "date": "2026-10-07T18:22:08.823Z",
+  "setup": {
+   "file": "Vortex-Client-Setup-2.5.33.exe",
+   "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/v2.5.33/Vortex-Client-Setup-2.5.33.exe",
+   "size": 117765517
+  },
+  "portable": {
+   "file": "Vortex-Client-Portable-2.5.33.exe",
+   "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/v2.5.33/Vortex-Client-Portable-2.5.33.exe",
+   "size": 117278199
+  },
+  "releaseUrl": "https://github.com/Marcinator31/Vortex-Launcher/releases/tag/v2.5.33"
+ },
+ "versions": [
+  {
+   "mc": "26.2",
+   "client": {
+    "name": "Vortex Client",
+    "version": "4.27.0",
+    "file": "vortexclient-fabric-26.2-4.27.0+26.2.jar",
+    "size": 1981115,
+    "sha256": "bb799817d7445ad7627b44f405b21e390dd337fd7bb529134b367dbad72bc190",
+    "date": "2026-10-08T16:33:59.121Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortexclient-fabric-26.2-4.27.0%2B26.2.jar",
+    "notes": "## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Kopf-Cosmetics\n- Alle Hüte neu: glatte 3D-Formen statt Klötzchen, alle animiert\n- Halo: leuchtender Goldring, schwebt und dreht sich, mit zweitem feinen Ring und Lichtfunken\n- Royal Crown: goldener Reif mit Zacken und Perlen, funkelnde Edelsteine, Glanz wandert über das Gold\n- Demon Horns: gebogene Hörner mit glühenden Spitzen\n- Orbit: drei leuchtende Kugeln mit Schweif kreisen um den Kopf\n- Crystal Crown: schwebende, sich drehende Kristalle\n- Neon Headphones: Kopfhörer mit Leuchtringen in wechselnden Farben\n- Fox Ears: weiche Fuchsohren, die ab und zu zucken\n- Flame Crown: flackernde Flammen rund um den Kopf\n- Witch Hat: geknickte Spitze, leuchtendes Band, Sterne um die Spitze\n- Leuchtende Teile leuchten auch nachts\n- Zylinder, Partyhut, Wikingerhelm, Weihnachtsmütze, Vortex-Kappe und Katzenohren gibt es nicht mehr\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Capes\n- Animierte Capes in höherer Auflösung (1,5-fach schärfer)\n- Feinere Stoffstruktur, dunklere Ränder für mehr Tiefe, schmalere Borte\n- Der Glanz ist jetzt ein feiner Lichtstreif in der Farbe des Capes statt eines breiten weißen Balkens\n- Neue 3D-Kopfschmuck-Cosmetics, schönere Capes (Test)"
+   },
+   "addon": {
+    "name": "Vortex Plus Addon",
+    "version": "2.43.1",
+    "file": "vortex-plus-addon-2.43.1+26.2.jar",
+    "size": 546356,
+    "sha256": "e8f1af0200db49fa11a79a113c1a681b12b8077d164f3d4e12f9ca032b6da8c0",
+    "date": "2026-10-07T18:17:28.000Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortex-plus-addon-2.43.1%2B26.2.jar",
+    "notes": "## Addon läuft auch mit älterem Client\n- Hat der Client „Clean Modules“ noch nicht (vor 4.20), startet das Addon trotzdem normal"
+   }
+  },
+  {
+   "mc": "26.1.2",
+   "client": {
+    "name": "Vortex Client",
+    "version": "4.27.0",
+    "file": "vortexclient-fabric-26.1.2-4.27.0+26.1.2.jar",
+    "size": 1979217,
+    "sha256": "248eb4ea02b897249eb13cd9e7aff415d3beefa93af81a118eaa975e04363516",
+    "date": "2026-10-08T16:33:56.021Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortexclient-fabric-26.1.2-4.27.0%2B26.1.2.jar",
+    "notes": "## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Kopf-Cosmetics\n- Alle Hüte neu: glatte 3D-Formen statt Klötzchen, alle animiert\n- Halo: leuchtender Goldring, schwebt und dreht sich, mit zweitem feinen Ring und Lichtfunken\n- Royal Crown: goldener Reif mit Zacken und Perlen, funkelnde Edelsteine, Glanz wandert über das Gold\n- Demon Horns: gebogene Hörner mit glühenden Spitzen\n- Orbit: drei leuchtende Kugeln mit Schweif kreisen um den Kopf\n- Crystal Crown: schwebende, sich drehende Kristalle\n- Neon Headphones: Kopfhörer mit Leuchtringen in wechselnden Farben\n- Fox Ears: weiche Fuchsohren, die ab und zu zucken\n- Flame Crown: flackernde Flammen rund um den Kopf\n- Witch Hat: geknickte Spitze, leuchtendes Band, Sterne um die Spitze\n- Leuchtende Teile leuchten auch nachts\n- Zylinder, Partyhut, Wikingerhelm, Weihnachtsmütze, Vortex-Kappe und Katzenohren gibt es nicht mehr\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Capes\n- Animierte Capes in höherer Auflösung (1,5-fach schärfer)\n- Feinere Stoffstruktur, dunklere Ränder für mehr Tiefe, schmalere Borte\n- Der Glanz ist jetzt ein feiner Lichtstreif in der Farbe des Capes statt eines breiten weißen Balkens\n- Neue 3D-Kopfschmuck-Cosmetics, schönere Capes (Test)"
+   },
+   "addon": {
+    "name": "Vortex Plus Addon",
+    "version": "2.43.1",
+    "file": "vortex-plus-addon-2.43.1+26.1.2.jar",
+    "size": 545727,
+    "sha256": "2eb5985d19642de22bc32f927c0a91de1d4856c8cdd95cf7f8223870e94a6bb8",
+    "date": "2026-10-07T18:17:28.000Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortex-plus-addon-2.43.1%2B26.1.2.jar",
+    "notes": "## Addon läuft auch mit älterem Client\n- Hat der Client „Clean Modules“ noch nicht (vor 4.20), startet das Addon trotzdem normal"
+   }
+  },
+  {
+   "mc": "26.1.1",
+   "client": {
+    "name": "Vortex Client",
+    "version": "4.27.0",
+    "file": "vortexclient-fabric-26.1.1-4.27.0+26.1.1.jar",
+    "size": 1979215,
+    "sha256": "60e5544400773d92a1e3f7953d73958ddca131746c247beb9e6a1c35300b903d",
+    "date": "2026-10-08T16:34:13.871Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortexclient-fabric-26.1.1-4.27.0%2B26.1.1.jar",
+    "notes": "## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Kopf-Cosmetics\n- Alle Hüte neu: glatte 3D-Formen statt Klötzchen, alle animiert\n- Halo: leuchtender Goldring, schwebt und dreht sich, mit zweitem feinen Ring und Lichtfunken\n- Royal Crown: goldener Reif mit Zacken und Perlen, funkelnde Edelsteine, Glanz wandert über das Gold\n- Demon Horns: gebogene Hörner mit glühenden Spitzen\n- Orbit: drei leuchtende Kugeln mit Schweif kreisen um den Kopf\n- Crystal Crown: schwebende, sich drehende Kristalle\n- Neon Headphones: Kopfhörer mit Leuchtringen in wechselnden Farben\n- Fox Ears: weiche Fuchsohren, die ab und zu zucken\n- Flame Crown: flackernde Flammen rund um den Kopf\n- Witch Hat: geknickte Spitze, leuchtendes Band, Sterne um die Spitze\n- Leuchtende Teile leuchten auch nachts\n- Zylinder, Partyhut, Wikingerhelm, Weihnachtsmütze, Vortex-Kappe und Katzenohren gibt es nicht mehr\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Capes\n- Animierte Capes in höherer Auflösung (1,5-fach schärfer)\n- Feinere Stoffstruktur, dunklere Ränder für mehr Tiefe, schmalere Borte\n- Der Glanz ist jetzt ein feiner Lichtstreif in der Farbe des Capes statt eines breiten weißen Balkens\n- Neue 3D-Kopfschmuck-Cosmetics, schönere Capes (Test)"
+   },
+   "addon": {
+    "name": "Vortex Plus Addon",
+    "version": "2.43.1",
+    "file": "vortex-plus-addon-2.43.1+26.1.1.jar",
+    "size": 545726,
+    "sha256": "4f2c3963bd12ebf630d16960bd1d2dfa924b234db7664f5aae5eaf63070feea0",
+    "date": "2026-10-07T18:17:28.000Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortex-plus-addon-2.43.1%2B26.1.1.jar",
+    "notes": "## Addon läuft auch mit älterem Client\n- Hat der Client „Clean Modules“ noch nicht (vor 4.20), startet das Addon trotzdem normal"
+   }
+  },
+  {
+   "mc": "1.21.11",
+   "client": {
+    "name": "Vortex Client",
+    "version": "4.27.0",
+    "file": "vortexclient-fabric-1.21.11-4.27.0+1.21.11.jar",
+    "size": 2007990,
+    "sha256": "b00cff0b50529f8ab31bad9e40bdf35eb52d77c2c8ca440a2e1b3bb695bc1e40",
+    "date": "2026-10-08T16:34:24.081Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortexclient-fabric-1.21.11-4.27.0%2B1.21.11.jar",
+    "notes": "## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Kopf-Cosmetics\n- Alle Hüte neu: glatte 3D-Formen statt Klötzchen, alle animiert\n- Halo: leuchtender Goldring, schwebt und dreht sich, mit zweitem feinen Ring und Lichtfunken\n- Royal Crown: goldener Reif mit Zacken und Perlen, funkelnde Edelsteine, Glanz wandert über das Gold\n- Demon Horns: gebogene Hörner mit glühenden Spitzen\n- Orbit: drei leuchtende Kugeln mit Schweif kreisen um den Kopf\n- Crystal Crown: schwebende, sich drehende Kristalle\n- Neon Headphones: Kopfhörer mit Leuchtringen in wechselnden Farben\n- Fox Ears: weiche Fuchsohren, die ab und zu zucken\n- Flame Crown: flackernde Flammen rund um den Kopf\n- Witch Hat: geknickte Spitze, leuchtendes Band, Sterne um die Spitze\n- Leuchtende Teile leuchten auch nachts\n- Zylinder, Partyhut, Wikingerhelm, Weihnachtsmütze, Vortex-Kappe und Katzenohren gibt es nicht mehr\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Capes\n- Animierte Capes in höherer Auflösung (1,5-fach schärfer)\n- Feinere Stoffstruktur, dunklere Ränder für mehr Tiefe, schmalere Borte\n- Der Glanz ist jetzt ein feiner Lichtstreif in der Farbe des Capes statt eines breiten weißen Balkens\n- Neue 3D-Kopfschmuck-Cosmetics, schönere Capes (Test)"
+   },
+   "addon": {
+    "name": "Vortex Plus Addon",
+    "version": "2.43.1",
+    "file": "vortex-plus-addon-2.43.1+1.21.11.jar",
+    "size": 550296,
+    "sha256": "dad22dc7fa6a659c95fd043ad9d1e74a2dad5fd0648b98b62af74ea4077aae87",
+    "date": "2026-10-07T18:17:28.000Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortex-plus-addon-2.43.1%2B1.21.11.jar",
+    "notes": "## Addon läuft auch mit älterem Client\n- Hat der Client „Clean Modules“ noch nicht (vor 4.20), startet das Addon trotzdem normal"
+   }
+  },
+  {
+   "mc": "1.8.9",
+   "client": {
+    "name": "Vortex Client",
+    "version": "4.27.0",
+    "file": "vortexclient-fabric-1.8.9-4.27.0+1.8.9.jar",
+    "size": 365068,
+    "sha256": "bf0fc872af6485e0aab7ada94504586be9a872eddaac5d8a14aba6f153ec550d",
+    "date": "2026-10-08T16:34:08.597Z",
+    "url": "https://github.com/Marcinator31/Vortex-Launcher/releases/download/vortex-files/vortexclient-fabric-1.8.9-4.27.0%2B1.8.9.jar",
+    "notes": "## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Kopf-Cosmetics\n- Alle Hüte neu: glatte 3D-Formen statt Klötzchen, alle animiert\n- Halo: leuchtender Goldring, schwebt und dreht sich, mit zweitem feinen Ring und Lichtfunken\n- Royal Crown: goldener Reif mit Zacken und Perlen, funkelnde Edelsteine, Glanz wandert über das Gold\n- Demon Horns: gebogene Hörner mit glühenden Spitzen\n- Orbit: drei leuchtende Kugeln mit Schweif kreisen um den Kopf\n- Crystal Crown: schwebende, sich drehende Kristalle\n- Neon Headphones: Kopfhörer mit Leuchtringen in wechselnden Farben\n- Fox Ears: weiche Fuchsohren, die ab und zu zucken\n- Flame Crown: flackernde Flammen rund um den Kopf\n- Witch Hat: geknickte Spitze, leuchtendes Band, Sterne um die Spitze\n- Leuchtende Teile leuchten auch nachts\n- Zylinder, Partyhut, Wikingerhelm, Weihnachtsmütze, Vortex-Kappe und Katzenohren gibt es nicht mehr\n## Vortex Client 4.27: neue Kopf-Cosmetics und schärfere Capes – Capes\n- Animierte Capes in höherer Auflösung (1,5-fach schärfer)\n- Feinere Stoffstruktur, dunklere Ränder für mehr Tiefe, schmalere Borte\n- Der Glanz ist jetzt ein feiner Lichtstreif in der Farbe des Capes statt eines breiten weißen Balkens\n- Neue 3D-Kopfschmuck-Cosmetics, schönere Capes (Test)"
+   },
+   "addon": null
+  }
+ ],
+ "downloads": 0
+}

@@ -1,0 +1,56 @@
+# Haelt die Downloads auf der Website aktuell.
+#
+# Alle 30 Minuten: vergleicht die freigegebenen Dateien (manifest.json im
+# Launcher-Release "vortex-files") und den neuesten Launcher mit dem, was die
+# Website gerade anbietet. Weicht etwas ab -- z. B. nach "Fuer alle freigeben"
+# im Launcher-Admin oder einem neuen Launcher-Release -- startet ein Neubau auf
+# Render ueber den Deploy Hook.
+#
+# Einrichten (einmal):
+#   Secret   RENDER_DEPLOY_HOOK  = Deploy-Hook-URL aus Render (Settings -> Deploy Hook)
+#   Variable SITE_URL            = Adresse der Website, z. B. https://vortex-website.onrender.com
+name: Downloads aktuell halten
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Immer neu bauen'
+        type: boolean
+        default: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vergleichen und bei Bedarf neu bauen
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+          SITE: ${{ vars.SITE_URL }}
+          FORCE: ${{ inputs.force || 'false' }}
+        run: |
+          if [ -z "$HOOK" ] || [ -z "$SITE" ]; then
+            echo "::notice::RENDER_DEPLOY_HOOK oder SITE_URL fehlt noch - nichts zu tun."
+            exit 0
+          fi
+          REL=https://github.com/Marcinator31/Vortex-Launcher/releases
+          curl -fsSL "$REL/download/vortex-files/manifest.json" -o manifest.json
+          curl -fsSL "$REL/latest/download/latest.yml" -o latest.yml
+          curl -fsSL "$SITE/data/downloads.json?ts=$(date +%s)" -o site.json || echo '{}' > site.json
+          python3 - <<'PY' > result.txt
+          import json, re
+          m = json.load(open('manifest.json'))
+          soll = sorted(f"{mc}:{f['file']}" for mc, e in m.get('versions', {}).items() for f in e.get('files', {}).values())
+          v = re.search(r'^version:\s*(\S+)', open('latest.yml').read(), re.M)
+          soll.append('launcher:' + (v.group(1) if v else '?'))
+          s = json.load(open('site.json'))
+          ist = sorted(f"{x['mc']}:{x[k]['file']}" for x in s.get('versions', []) for k in ('client', 'addon') if x.get(k))
+          ist.append('launcher:' + str(s.get('launcher', {}).get('version', '-')))
+          print('same' if sorted(soll) == sorted(ist) else 'diff')
+          PY
+          echo "Ergebnis: $(cat result.txt)"
+          if [ "$(cat result.txt)" = "diff" ] || [ "$FORCE" = "true" ]; then
+            curl -fsS -X POST "$HOOK" > /dev/null && echo "Neubau auf Render gestartet."
+          fi
