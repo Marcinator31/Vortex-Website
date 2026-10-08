@@ -29,9 +29,9 @@ render.yaml             Render-Blueprint
 ## Auf Render veröffentlichen
 
 1. Auf <https://dashboard.render.com> mit GitHub anmelden.
-2. **New → Blueprint** wählen und dieses Repository verbinden. Render findet `render.yaml` und legt die Static Site `vortex-website` an. Auf **Apply** klicken.
+2. **New → Blueprint** wählen und dieses Repository verbinden. Render findet `render.yaml` und legt die Static Site `vortex-client` an. Auf **Apply** klicken.
    - Ohne Blueprint geht es auch: **New → Static Site**, Repo wählen, *Build Command* `node scripts/build-data.mjs`, *Publish Directory* `public`.
-3. Nach ein bis zwei Minuten ist die Seite unter `https://vortex-website.onrender.com` (oder ähnlich) erreichbar. Jeder Push auf `main` baut sie neu.
+3. Nach ein bis zwei Minuten ist die Seite unter `https://vortex-client.onrender.com` (ist der Name schon vergeben, hängt Render ein paar Zeichen an) erreichbar. Jeder Push auf `main` baut sie neu.
 4. **Downloads automatisch aktuell halten** (empfohlen):
    - In Render: Static Site → **Settings → Deploy Hook** → URL kopieren.
    - Im GitHub-Repo: **Settings → Secrets and variables → Actions**

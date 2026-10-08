@@ -3,7 +3,7 @@
 # Versionen aus manifest.json, keine Betas) nach public/data/downloads.json.
 services:
   - type: web
-    name: vortex-website
+    name: vortex-client
     runtime: static
     buildCommand: node scripts/build-data.mjs
     staticPublishPath: ./public
