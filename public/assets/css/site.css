@@ -64,7 +64,7 @@ button { font: inherit; color: inherit; }
 .nav.scrolled { border-bottom-color: var(--line); }
 .nav .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 900; font-size: 18px; letter-spacing: .02em; }
-.brand img { width: 36px; height: 36px; }
+.brand img { width: 38px; height: 38px; filter: drop-shadow(0 0 10px rgba(139,92,246,.55)); }
 .brand small { font-family: var(--body); font-weight: 500; font-size: 13px; color: var(--dim); letter-spacing: 0; margin-left: 2px; }
 .nav ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; }
 .nav ul a { text-decoration: none; color: var(--dim); font-weight: 500; font-size: 15px; transition: color .2s; }
@@ -231,7 +231,7 @@ section.block { padding: clamp(70px, 9vw, 130px) 0; position: relative; }
 .tabs button { border: 1px solid var(--line); background: rgba(11,9,24,.5); border-radius: 12px; padding: 9px 14px; font-family: var(--ui); font-weight: 700; font-size: 15px; cursor: pointer; color: var(--dim); }
 .tabs button[aria-selected="true"] { color: #fff; border-color: rgba(211,166,255,.55); background: linear-gradient(100deg, rgba(139,92,246,.45), rgba(59,130,246,.35)); }
 .file { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 16px; border-radius: 16px; background: rgba(11,9,24,.45); border: 1px solid var(--line); margin-bottom: 10px; }
-.file img { width: 44px; height: 44px; }
+.file img { width: 44px; height: 44px; padding: 6px; border-radius: 12px; background: rgba(139,92,246,.12); }
 .file .addon-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, #F97316, #DC2626); font-family: var(--display); font-weight: 900; color: #fff; }
 .file b { display: block; font-size: 17px; }
 .file small { color: var(--faint); font-size: 14px; display: block; overflow-wrap: anywhere; }

@@ -8,7 +8,7 @@
 .game.open .vx-panel.active { opacity: 1; transform: none; }
 .vx-panel:not(.active) { visibility: hidden; }
 .vx-head { display: flex; align-items: center; gap: .9em; margin-bottom: 1.3em; }
-.vx-head img { width: 3.4em; height: 3.4em; margin: -.4em -.2em; }
+.vx-head img { width: 2.7em; height: 2.7em; filter: drop-shadow(0 0 .5em rgba(139,92,246,.6)); }
 .vx-head b { display: block; font-size: 1.55em; font-weight: 600; letter-spacing: -.01em; }
 .vx-head small { color: rgba(255,255,255,.62); font-size: 1.02em; }
 .vx-x { margin-left: auto; width: 2.6em; height: 2.6em; border-radius: 50%; border: 0; background: rgba(255,255,255,.07); color: #fff; cursor: pointer; display: grid; place-items: center; }

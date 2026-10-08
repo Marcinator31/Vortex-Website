@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs><radialGradient id="bg" cx="0.3" cy="0.2" r="1.1"><stop offset="0" stop-color="#2A1F55"/><stop offset="0.6" stop-color="#140F2C"/><stop offset="1" stop-color="#0B0918"/></radialGradient>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feColorMatrix in="b" type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.36  0 0 0 0 0.96  0 0 0 0.55 0" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="200" height="200" rx="44" fill="url(#bg)"/>
+<rect x="1" y="1" width="198" height="198" rx="43" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+<g transform="translate(22 18) scale(0.78)" filter="url(#glow)"><defs><linearGradient id="a1" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#D3A6FF"></stop><stop offset="1" stop-color="#7C3AED"></stop></linearGradient><linearGradient id="a2" x1="1" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#5CC8FF"></stop><stop offset="1" stop-color="#4338CA"></stop></linearGradient></defs><path d="M26 38H70L112 150L100 174Z" fill="url(#a1)"></path><path d="M130 38H174L100 174L88 150Z" fill="url(#a2)"></path></g>
+</svg>

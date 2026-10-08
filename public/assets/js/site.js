@@ -116,7 +116,7 @@
   }
 
   function zeile(f, art) {
-    const ico = art === 'client' ? '<img src="assets/img/logo.png" alt="">' : '<span class="addon-ico">+</span>';
+    const ico = art === 'client' ? '<img src="assets/img/logo.svg" alt="">' : '<span class="addon-ico">+</span>';
     const titel = art === 'client' ? 'Vortex Client' : 'Vortex Plus Addon';
     const was = art === 'client' ? t('d.clientDesc') : t('d.addonDesc');
     return `<div class="file">${ico}<div><b>${titel} ${esc(f.version)}</b><small>${was} · ${t('d.size', mb(f.size))}${f.date ? ' · ' + esc(datum(f.date)) : ''}</small>

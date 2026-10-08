@@ -30,7 +30,7 @@
   function kopf(titel, sub, zurueck) {
     return `<div class="vx-head">
       ${zurueck ? `<button class="vx-back" data-go="home" aria-label="Back">${icon('i-back')}</button>` : ''}
-      <img src="assets/img/logo.png" alt="">
+      <img src="assets/img/logo.svg" alt="">
       <div><b>${titel}</b><small>${sub}</small></div>
       <button class="vx-x" data-close aria-label="Close">${icon('i-x')}</button></div>`;
   }
