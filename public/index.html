@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/unbounded-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css">
-<link rel="stylesheet" href="assets/css/preview.css">
+<link rel="stylesheet" href="assets/css/site.css?v=dev">
+<link rel="stylesheet" href="assets/css/preview.css?v=dev">
 </head>
 <body>
 
@@ -81,8 +81,8 @@
       <h1><span data-i18n="hero.press">Press</span><br><span class="key" id="heroKey" role="button" tabindex="0" aria-controls="game"><span>Right Shift</span></span></h1>
       <p class="lead" data-i18n-html="hero.lead">That one key opens everything in <b>Vortex</b>: 143 modules, 66 cheats, 5 bots, your HUD and your music. Free, for every Minecraft version from 1.8.9 to 26.2.</p>
       <div class="cta">
-        <a class="btn btn-main" id="heroDownload" href="#download"><svg><use href="#i-win"/></svg><span><span data-i18n="hero.dl">Download the launcher</span><span class="sub" id="heroDlSub">Windows 10 / 11</span></span></a>
-        <button class="btn btn-ghost" type="button" id="trailerBtn"><svg><use href="#i-play"/></svg><span data-i18n="hero.trailer">Watch the trailer</span></button>
+        <a class="btn btn-main" id="heroDownload" href="#download"><svg width="20" height="20" aria-hidden="true"><use href="#i-win"/></svg><span><span data-i18n="hero.dl">Download the launcher</span><span class="sub" id="heroDlSub">Windows 10 / 11</span></span></a>
+        <button class="btn btn-ghost" type="button" id="trailerBtn"><svg width="20" height="20" aria-hidden="true"><use href="#i-play"/></svg><span data-i18n="hero.trailer">Watch the trailer</span></button>
       </div>
       <div class="facts">
         <span id="factVersion">Vortex 4.27</span>
@@ -138,7 +138,7 @@
   </div>
   <div class="wrap">
     <div class="finder">
-      <label class="search"><svg><use href="#i-search"/></svg><span class="sr" data-i18n="c.searchLabel">Search cheats</span><input id="cheatSearch" type="search" placeholder="Search 66 cheats – try “aura” or “elytra”" data-i18n-ph="c.search" autocomplete="off"></label>
+      <label class="search"><svg width="20" height="20" aria-hidden="true"><use href="#i-search"/></svg><span class="sr" data-i18n="c.searchLabel">Search cheats</span><input id="cheatSearch" type="search" placeholder="Search 66 cheats – try “aura” or “elytra”" data-i18n-ph="c.search" autocomplete="off"></label>
       <div class="filters" id="riskFilter" role="group" aria-label="Ban risk">
         <button type="button" data-risk="all" aria-pressed="true" data-i18n="c.all">All</button>
         <button type="button" data-risk="low" aria-pressed="false"><span class="dot risk-low"></span><span data-i18n="c.low">Low</span></button>
@@ -219,7 +219,7 @@
 <!-- ================= COSMETICS (nur Hinweis) ================= -->
 <section class="wrap reveal" style="padding-bottom:clamp(60px,8vw,110px)">
   <div class="cos">
-    <div class="icons" aria-hidden="true"><span style="color:var(--lilac)"><svg><use href="#i-cape"/></svg></span><span style="color:#FFD27A"><svg><use href="#i-crown"/></svg></span><span style="color:var(--cyan)"><svg><use href="#i-spark"/></svg></span></div>
+    <div class="icons" aria-hidden="true"><span style="color:var(--lilac)"><svg width="20" height="20" aria-hidden="true"><use href="#i-cape"/></svg></span><span style="color:#FFD27A"><svg width="20" height="20" aria-hidden="true"><use href="#i-crown"/></svg></span><span style="color:var(--cyan)"><svg width="20" height="20" aria-hidden="true"><use href="#i-spark"/></svg></span></div>
     <div><h2 data-i18n="k.h">Animated capes, 3D hats and emotes</h2><p data-i18n="k.p">We are keeping them a surprise. Open the Wardrobe in game to try them on.</p></div>
     <a class="btn btn-ghost" href="#download" data-i18n="k.cta">Try them in game</a>
   </div>
@@ -236,7 +236,7 @@
       <div class="card launcher-card reveal">
         <h3 data-i18n="d.lt">Vortex Launcher</h3>
         <p class="muted" data-i18n="d.ld">Windows 10 and 11. Includes the client, the Plus Addon and Fabric.</p>
-        <a class="btn btn-main big" id="dlSetup" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest"><svg><use href="#i-down"/></svg><span><span data-i18n="d.setup">Download installer</span><span class="sub" id="dlSetupSub">.exe</span></span></a>
+        <a class="btn btn-main big" id="dlSetup" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest"><svg width="20" height="20" aria-hidden="true"><use href="#i-down"/></svg><span><span data-i18n="d.setup">Download installer</span><span class="sub" id="dlSetupSub">.exe</span></span></a>
         <div class="alt"><a id="dlPortable" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest" data-i18n="d.portable">Portable version (no install)</a><a id="dlRelease" href="https://github.com/Marcinator31/Vortex-Launcher/releases/latest" data-i18n="d.release">Release on GitHub</a></div>
         <ul class="points mini">
           <li data-i18n="d.b1">Sets up Fabric, Vortex and the Plus Addon in one go</li>
@@ -267,13 +267,15 @@
         </div>
         <h2 data-i18n="dc.h">Join the Vortex Discord</h2>
         <p data-i18n="dc.p">Get help with setup, report bugs, suggest new modules and be the first to hear about new versions.</p>
-        <a class="btn btn-main" href="https://discord.gg/mrSa2Fu3yS" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg><span data-i18n="dc.join">Join the Discord</span></a>
+        <a class="btn btn-main" href="https://discord.gg/mrSa2Fu3yS" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="dc.join">Join the Discord</span></a>
       </div>
       <div class="cm-team">
         <h3 data-i18n="dc.team">Made by</h3>
-        <button class="dev" type="button" data-copy="mr_marix"><span class="av" aria-hidden="true">M</span><span><b>mr_marix</b><small data-i18n="dc.role">Developer · Discord</small></span><span class="cp"><svg><use href="#i-copy"/></svg></span></button>
-        <button class="dev" type="button" data-copy="lukas35771"><span class="av av2" aria-hidden="true">L</span><span><b>lukas35771</b><small data-i18n="dc.role2">Developer · Discord</small></span><span class="cp"><svg><use href="#i-copy"/></svg></span></button>
-        <p class="cm-hint" data-i18n="dc.hint">Click a name to copy it, then add it as a friend in Discord.</p>
+        <ul class="team">
+          <li><span class="who"><b>mr_marix</b><small data-i18n="dc.role">Developer</small></span><button class="copy" type="button" data-copy="mr_marix" aria-label="Copy mr_marix"><svg width="14" height="14" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="dc.copy">Copy</span></button></li>
+          <li><span class="who"><b>lukas35771</b><small data-i18n="dc.role2">Developer</small></span><button class="copy" type="button" data-copy="lukas35771" aria-label="Copy lukas35771"><svg width="14" height="14" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="dc.copy">Copy</span></button></li>
+        </ul>
+        <p class="cm-hint" data-i18n="dc.hint">Copy a name and add it under “Add Friend” in Discord.</p>
       </div>
     </div>
   </div>
@@ -319,9 +321,9 @@
 
 <div class="toast" id="toast" role="status"></div>
 
-<script src="assets/js/modules.js"></script>
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/preview.js"></script>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/modules.js?v=dev"></script>
+<script src="assets/js/i18n.js?v=dev"></script>
+<script src="assets/js/preview.js?v=dev"></script>
+<script src="assets/js/site.js?v=dev"></script>
 </body>
 </html>

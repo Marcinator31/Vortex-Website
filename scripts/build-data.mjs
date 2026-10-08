@@ -116,7 +116,18 @@ async function main() {
   console.log(`downloads.json: Launcher ${launcher.version}, ${versionen.length} Minecraft-Versionen, Client ${versionen[0]?.client?.version}`);
 }
 
+// Versionsmarke an CSS/JS in index.html, damit Browser nach jedem Deploy die
+// neuen Dateien laden (die Assets werden einen Tag lang zwischengespeichert).
+async function stempeln() {
+  const datei = new URL('../public/index.html', import.meta.url);
+  const v = (process.env.RENDER_GIT_COMMIT || '').slice(0, 10) || Date.now().toString(36);
+  const html = await readFile(datei, 'utf8');
+  await writeFile(datei, html.replace(/\?v=[\w-]+"/g, `?v=${v}"`));
+  console.log('Versionsmarke:', v);
+}
+
 main().catch((e) => {
   // Build nicht scheitern lassen: die eingecheckte downloads.json bleibt.
   console.warn('Konnte Downloads nicht aktualisieren, nehme den letzten Stand:', e.message);
 });
+stempeln().catch((e) => console.warn('Versionsmarke nicht gesetzt:', e.message));

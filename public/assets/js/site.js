@@ -200,7 +200,8 @@
     }).catch(() => {});
   document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(b.dataset.copy); } catch (_) { /* egal */ }
-    const el = $('#toast'); el.textContent = t('dc.copied', b.dataset.copy); el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2600);
+    const lbl = b.querySelector('span'); b.classList.add('done'); lbl.textContent = t('dc.done');
+    setTimeout(() => { b.classList.remove('done'); lbl.textContent = t('dc.copy'); }, 1800);
   }));
 
   // ---------------------------------------------------------------- Trailer
